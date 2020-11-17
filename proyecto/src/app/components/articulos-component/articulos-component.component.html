@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <table class="table table-dark">
+        <tr>
+          <th>Nº</th>
+          <th>Producto</th>
+          <th>Descripcion</th>
+          <th>Color</th>
+          <th>Talla</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Eliminar</th>
+        </tr>
+        <ng-container *ngFor="let articulo of articulos; index as i;">
+          <tr>
+              <td>{{articulo.id}}</td>
+              <td>{{articulo.porducto}}</td>
+              <td>{{articulo.descripcion}}</td>
+              <td>{{articulo.color}}</td>
+              <td>{{articulo.talla}}</td>
+              <td><input type="number" name="cantidad" value={{articulo.cantidad}} [(ngModel)]="articulo.cantidad" id="cantidad" min=1 (change)=ngOnChanges()></td>
+              <td>{{articulo.precioOriginal}}€<ng-container *ngIf="articulo.rebajado"><br><span class="rojo">{{articulo.precioRebajado}}€</span></ng-container></td>
+              <td><button class="btn btn-white border-secondary bg-white btn-md mb-2" (click)=eliminarArticulo(i)><i class="fas fa-trash-alt"></i></button></td>
+          </tr>
+        </ng-container>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right">Total:</td>
+            <td>{{total}}</td>
+            <td></td>
+        </tr>
+      </table>
+</div>
+
