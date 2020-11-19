@@ -17,9 +17,9 @@ export class ArticulosComponentComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.total = 0;
-    this.articulos.push(new Articulo(1,"img1","Zapatos de cuero","Marron",45,10,true,10,9));
-    this.articulos.push(new Articulo(2,"Zapatos","Zapatos de cuero","Marron",45,1,true,10,9));
-    this.articulos.push(new Articulo(3,"Zapatos","Zapatos de cuero","Marron",45,1,false,10,9));
+    this.articulos.push(new Articulo(1,"Zapatos","Zapatos de cuero","Marron",45,10,true,10,9));
+    this.articulos.push(new Articulo(2,"Zapatos","Zapatos de cuero","Verde",45,1,true,10,9));
+    this.articulos.push(new Articulo(3,"Zapatos","Zapatos de cuero","Azul",45,1,false,10,9));
 
     function calcularTotal(lista:Articulo[]){
       let total:number = 0;
